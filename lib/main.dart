@@ -45,28 +45,17 @@ class _MyHomePageState extends State<MyHomePage> {
 
       Array newArray = Array();
       try {
-        newArray.sumallinrange([
-          1,
-          2,
-          3,
-          4,
-          5,
-          6,
-          7,
-          8,
-          9,
-          10,
-          11,
-          12,
-          13,
-          14,
-          15,
-          16,
-          17,
-          18,
-          19,
-          20
-        ]);
+        var a = [
+          "diorite",
+          "andesite",
+          "grass",
+          "dirt",
+          "pink wool",
+          "dead shrub"
+        ];
+        var b = ["diorite", "andesite", "grass", "dirt", "dead shrub"];
+
+        print(newArray.diffarray(a, b));
       } catch (e) {
         print(e);
       }

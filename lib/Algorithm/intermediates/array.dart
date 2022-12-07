@@ -1,3 +1,5 @@
+import 'package:flutter/foundation.dart';
+
 class Array {
   Array();
 
@@ -40,5 +42,35 @@ class Array {
       'DoWhileResult': resultDoWhile
     };
     print(result);
+  }
+
+  List<Object> diffarray(List<Object> a, List<Object> b) {
+    List<Object> result = [];
+
+    List<Object> equals = [];
+    List<Object> difference = [];
+
+    for (var i = 0; i < a.length; i++) {
+      for (var j = 0; j < b.length; j++) {
+        if (a[i] == b[j]) {
+          equals.add(a[i]);
+        } else {
+          if (!difference.contains(a[i])) {
+            difference.add(a[i]);
+          }
+          if (!difference.contains(b[j])) {
+            difference.add(b[j]);
+          }
+        }
+      }
+    }
+
+    for (var x in equals) {
+      difference.remove(x);
+    }
+
+    result.addAll(difference);
+
+    return result;
   }
 }
