@@ -1,10 +1,13 @@
-import 'package:flutter/foundation.dart';
-
 class Array {
   Array();
 
-  void sumallinrange(List<int> array) {
-    if (array.isEmpty) return;
+  List<int> sumallinrange(List<int> array) {
+    List<int> result = [];
+
+    if (array.isEmpty) {
+      result.add(0);
+      return result;
+    }
 
     int resultFor = 0;
     int resultForEach = 0;
@@ -34,14 +37,12 @@ class Array {
       if (array[i] != 0) resultDoWhile += array[i];
       i++;
     } while (array.length > i);
-
-    var result = {
-      'ForResult': resultFor,
-      'ForEachResult': resultForEach,
-      'WhileResult': resultWhile,
-      'DoWhileResult': resultDoWhile
-    };
-    print(result);
+    if (resultDoWhile == resultForEach &&
+        resultForEach == resultFor &&
+        resultFor == resultWhile) {
+      result.add(resultForEach);
+    }
+    return result;
   }
 
   List<Object> diffarray(List<Object> a, List<Object> b) {

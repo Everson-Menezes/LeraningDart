@@ -31,14 +31,8 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-  int _counter = 0;
-
-  void _incrementCounter() {
-    setState(() {
-      _counter++;
-    });
-  }
-
+  var _results;
+  var _fuction;
   void teste() {
     setState(() {
       //Creates a new instance of the object from the Class Array that are placed on the name space 'Algorithm/intermediates/array.dart';
@@ -55,7 +49,8 @@ class _MyHomePageState extends State<MyHomePage> {
         ];
         var b = ["diorite", "andesite", "grass", "dirt", "dead shrub"];
 
-        print(newArray.diffarray(a, b));
+        _results = newArray.diffarray(a, b);
+        _fuction = "Here it's the difference between the two lists";
       } catch (e) {
         print(e);
       }
@@ -72,11 +67,11 @@ class _MyHomePageState extends State<MyHomePage> {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: <Widget>[
-              const Text(
-                'You have pushed the button this many times:',
+              Text(
+                '$_fuction',
               ),
               Text(
-                '$_counter',
+                '$_results',
                 style: Theme.of(context).textTheme.headline4,
               ),
             ],
